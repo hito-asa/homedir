@@ -14,7 +14,7 @@ set mouse=a
 set guioptions+=a
 set ttymouse=xterm2
 
-:hi clear CursorLine
+highlight clear CursorLine
 :hi CursorLine gui=underline
 highlight CursorLine ctermbg=black guibg=black
 
