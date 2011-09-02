@@ -1,0 +1,3 @@
+bindkey "^[[5;5~" eval 'prev' 'fit'
+bindkey "^[[6;5~" eval 'next' 'fit'
+
