@@ -1884,6 +1884,7 @@ function! s:CmdLine_Twitter(initstr, inreplyto)
     let mesg = input("Your Twitter: ", a:initstr)
     call inputrestore()
     call s:post_twitter(mesg, a:inreplyto)
+    call PyIBusDisable()
 endfunction
 
 " Extract the user name from a line in the timeline.
