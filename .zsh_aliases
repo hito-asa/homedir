@@ -1,0 +1,2 @@
+alias findscala='(find . -name "*.java";find . -name "*.scala") | xargs grep'
+
