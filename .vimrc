@@ -2,12 +2,11 @@ set nocompatible
 set showmatch
 set showcmd
 set showmode
-set number
 set ruler
 set laststatus=2
 set title
 set linespace=0
-set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
+set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']['.&filetype.']'}%=%l,%c%V%8P
 set wildmenu
 set cursorline
 set nobackup
