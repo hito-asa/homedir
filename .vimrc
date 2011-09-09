@@ -8,6 +8,7 @@ set title
 set linespace=0
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']['.&filetype.']'}%=%l,%c%V%8P
 set wildmenu
+set nowrap
 set cursorline
 set nobackup
 set autoread
@@ -25,6 +26,9 @@ set backspace=indent,eol,start
 
 "=== tags
 set tags=~/.tags
+if filereadable(".tags")
+  set tags+=.tags
+endif
 set tags+=/usr/local/java/jdk1.7.0/src/tags
 set tags+=/usr/local/scala/scala-2.9.1.final/src/tags
 

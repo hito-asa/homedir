@@ -1,2 +1,3 @@
 alias findscala='(find . -name "*.java";find . -name "*.scala") | xargs grep'
-
+alias alt='update-alternatives'
+alias ualt='update-alternatives --admindir ~/.alternatives/admin --altdir ~/.alternatives'
