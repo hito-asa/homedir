@@ -1,4 +1,16 @@
 set nocompatible
+filetype off
+
+"=== initialize vundle
+set rtp+=~/.vim/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'Smooth-Scroll'
+Bundle 'TwitVim'
+
+filetype plugin indent on
+
 set showmatch
 set showcmd
 set showmode
@@ -40,6 +52,9 @@ inoremap <C-h> <Left>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
+map <PageUp> <C-U>
+map <PageDown> <C-D>
+
 
 "=== syntax
 if $t_Co > 1
@@ -68,6 +83,7 @@ highlight JpSpace cterm=underline ctermfg=Blue guifg=Blue
 let twitvim_count = 100
 let twitvim_api_root = "https://api.twitter.com/1"
 let twitvim_enable_python = 1
+let twitvim_show_header = 0
 
 "=== IME control
 au InsertLeave * call PyIBusDisable()
