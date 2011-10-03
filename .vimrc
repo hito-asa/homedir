@@ -8,6 +8,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'Smooth-Scroll'
 Bundle 'TwitVim'
+Bundle 'project.tar.gz'
 
 filetype plugin indent on
 
@@ -55,6 +56,20 @@ inoremap <C-l> <Right>
 map <PageUp> <C-U>
 map <PageDown> <C-D>
 
+"--- VimShell
+" ,is: シェルを起動
+"nnoremap <silent> ,is :VimShell
+" ,ipy: pythonを非同期で起動
+"nnoremap <silent> ,ipy :VimShellInteractive python
+" ,irb: irbを非同期で起動
+"nnoremap <silent> ,irb :VimShellInteractive irb
+" ,ss: 非同期で開いたインタプリタに現在の行を評価させる
+"vmap <silent> ,ss :VimShellSendString
+" ,sb: 非同期で開いたインタプリタに現在の行を評価させる
+"vmap <silent> ,sb :VimShellSendBuffer
+" 選択中に,ss: 非同期で開いたインタプリタに選択行を評価させる
+"nnoremap <silent> ,ss <S-v>:VimShellSendString
+
 
 "=== syntax
 if $t_Co > 1
@@ -78,6 +93,10 @@ au BufRead,BufNew * match JpSpace /　/
 highlight SpecialKey term=underline ctermfg=DarkYellow guifg=DarkYellow
 highlight JpSpace cterm=underline ctermfg=Blue guifg=Blue
 
+"=== project
+"let g:proj_flags = "imstc"
+nmap <silent> <Leader>p <Plug>ToggleProject
+nmap <silent> <Leader>P :Project<CR>
 
 "=== twitvim
 let twitvim_count = 100
