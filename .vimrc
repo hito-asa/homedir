@@ -9,6 +9,7 @@ Bundle 'gmarik/vundle'
 Bundle 'Smooth-Scroll'
 Bundle 'TwitVim'
 Bundle 'project.tar.gz'
+Bundle 'bufexplorer.zip'
 
 filetype plugin indent on
 
