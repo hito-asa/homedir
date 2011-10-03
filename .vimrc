@@ -105,15 +105,17 @@ let twitvim_enable_python = 1
 let twitvim_show_header = 0
 
 "=== IME control
-au InsertLeave * call PyIBusDisable()
-function! PyIBusDisable()
+if stridx(system('uname -a'), "Ubuntu") >= 0
+  au InsertLeave * call PyIBusDisable()
+  function! PyIBusDisable()
 python << EOF
 import ibus
 bus = ibus.Bus()
 ic = ibus.InputContext(bus, bus.current_input_contxt())
 ic.disable()
 EOF
-endfunction
+  endfunction
+endif
 
 "=== external config
 if filereadable(expand('~/.vimrc.unshared'))
