@@ -115,3 +115,8 @@ ic.disable()
 EOF
 endfunction
 
+"=== external config
+if filereadable(expand('~/.vimrc.unshared'))
+  so ~/.vimrc.unshared
+endif
+
