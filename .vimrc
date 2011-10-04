@@ -10,6 +10,9 @@ Bundle 'Smooth-Scroll'
 Bundle 'TwitVim'
 Bundle 'project.tar.gz'
 Bundle 'bufexplorer.zip'
+Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/vimfiler'
+Bundle 'sudo.vim'
 
 filetype plugin indent on
 
@@ -98,6 +101,9 @@ highlight JpSpace cterm=underline ctermfg=Blue guifg=Blue
 "let g:proj_flags = "imstc"
 nmap <silent> <Leader>p <Plug>ToggleProject
 nmap <silent> <Leader>P :Project<CR>
+
+"=== vimfiler
+let vimfiler_as_default_explorer = 1
 
 "=== twitvim
 let twitvim_count = 100

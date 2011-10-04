@@ -12,4 +12,6 @@
 !/.gitignore
 
 /.vim/bundle
+/.vim/.VimballRecord
+/.vim/.netrwhist
 
