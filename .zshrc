@@ -42,3 +42,5 @@ if [ -f ~/.zsh_aliases ]; then
   . ~/.zsh_aliases
 fi
 
+export PATH=$HOME/bin:$PATH
+
