@@ -1,6 +1,9 @@
 /*
 /.*
 
+!/.bashrc
+!/.bash_aliases
+!/.bash_env
 !/.sbtrc
 !/.zshrc
 !/.zsh_aliases
