@@ -10,8 +10,6 @@ Bundle 'Smooth-Scroll'
 Bundle 'TwitVim'
 Bundle 'project.tar.gz'
 Bundle 'bufexplorer.zip'
-Bundle 'Shougo/unite.vim'
-Bundle 'Shougo/vimfiler'
 Bundle 'sudo.vim'
 
 filetype plugin indent on
@@ -112,7 +110,7 @@ let twitvim_enable_python = 1
 let twitvim_show_header = 0
 
 "=== IME control
-if stridx(system('uname -a'), "Ubuntu") >= 0
+if stridx(system('uname -a'), "Ubuntu") >= 0 && $USER != "root"
   au InsertLeave * call PyIBusDisable()
   function! PyIBusDisable()
 python << EOF
