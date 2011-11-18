@@ -57,6 +57,8 @@ xterm*|rxvt*)
     ;;
 esac
 
+export PATH=$HOME/bin:$PATH
+
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases

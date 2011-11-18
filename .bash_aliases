@@ -23,3 +23,7 @@ alias assh="ssh -i ~/.ssh/aws/hito_asa_aws_tokyo.pem"
 alias ascp='scp -i ~/.ssh/aws/hito_asa_aws_tokyo.pem'
 alias xrfit='xrandr --size 1400x1050'
 
+alias py=ipython
+
+alias ualt='update-alternatives --altdir ~/.alternatives --admindir ~/.alternatives/admin'
+
