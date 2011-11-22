@@ -1,3 +1,8 @@
+bindkey "^A"
+escape ^Zz
+register x "^z"
+
+scrollback 20000
+
 bindkey "^[[5;5~" eval 'prev' 'fit'
 bindkey "^[[6;5~" eval 'next' 'fit'
-
