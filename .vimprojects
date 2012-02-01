@@ -1,5 +1,5 @@
-
-openfollow=$HOME/work/github/open-follow CD=. filter="*.scala *.xml *.conf" {
+openfollow=$HOME/work/github/prcm/open-follow CD=. filter="*.scala *.xml *.conf" {
+ openfollow.conf
  project=project CD=. filter="**/*.scala **/*.sbt" {
   OpenFollowBuild.scala
   plugins.sbt
@@ -12,77 +12,59 @@ openfollow=$HOME/work/github/open-follow CD=. filter="*.scala *.xml *.conf" {
   FriendsAPI.scala
   FriendshipsAPI.scala
   ScalatraFilter.scala
-  ServiceAPI.scala
   StatusesAPI.scala
   UsersAPI.scala
   UsersCommon.scala
  }
- api-src-test=openfollow-api/src/test/scala/jp/prcm/openfollow/api CD=. filter="**/*.scala" {
-  APIClient.scala
-  FollowersAPISpec.scala
-  HeaderFactory.scala
-  StatusesAPISpec.scala
-  UsersAPISpec.scala
-  api.scala
-}
  worker-src-main=openfollow-worker/src/main/scala/jp/prcm/openfollow/worker CD=. filter="**/*.scala" {
   Main.scala
-  ProcessorActor.scala
   ProcessorSupervisor.scala
   QueueMonitor.scala
   RootSupervisor.scala
   StopHandler.scala
   Supervisor.scala
- }
- worker-src-test=openfollow-worker/src/test/scala/jp/prcm/openfollow/worker CD=. filter="**/*.scala" {
-  MainSpec.scala
-  ProcessorActorSpec.scala
+  package.scala
  }
  common-src-main=openfollow-common/src/main/scala/jp/prcm/openfollow/common CD=. filter="**/*.scala" {
+  AbstractDB.scala
   DB.scala
+  InternalMainDB.scala
+  TimelineDB.scala
   config/Config.scala
+  entity/FollowEntry.scala
   entity/Followees.scala
   entity/Followers.scala
+  entity/IdGenerator.scala
   entity/JsonEntity.scala
   entity/Service.scala
   entity/Status.scala
+  entity/TimelineIndex.scala
   entity/User.scala
   log/Logger.scala
   log/MongoDBAppender.scala
+  log/UpdateLogPhaseType.scala
+  package.scala
   queue/Kestrel.scala
   queue/Queue.scala
   util/ManifestNotNothing.scala
+  util/NotImplementedError.scala
+  util/Reflection.scala
+  util/ScalazArm.scala
   util/Serializer.scala
   util/Thread.scala
   util/Timer.scala
-  util/Using.scala
   util/Util.scala
- }
- common-src-test=openfollow-common/src/test/scala/jp/prcm/openfollow CD=. filter="**/*.scala" {
-  common/DBSpec.scala
-  common/config/configSpec.scala
-  common/entity/FolloweesSpec.scala
-  common/entity/FollowersSpec.scala
-  common/entity/StatusSpec.scala
-  common/entity/UserSpec.scala
-  common/log/LoggerSpec.scala
-  common/queue/QueueSpec.scala
-  package.scala
  }
  service-src-main=openfollow-service/src/main/scala/jp/prcm/openfollow/service CD=. filter="**/*.scala" {
   DebugService.scala
   FriendshipsService.scala
+  HomeTimeline.scala
+  RecommendService.scala
   ServiceService.scala
   StatusesService.scala
+  TimelineIndexService.scala
   UsersService.scala
   WriteBuffer.scala
  }
- service-src-test=openfollow-service/src/test/scala/jp/prcm/openfollow/service CD=. filter="**/*.scala" {
-  FriendshipsServiceSpec.scala
-  Loan.scala
-  ServiceServiceSpec.scala
-  StatusServiceSpec.scala
-  UserServiceSpec.scala
-  service.scala
- }
 }
+

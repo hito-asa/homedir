@@ -27,3 +27,7 @@ alias py=ipython
 
 alias ualt='update-alternatives --altdir ~/.alternatives --admindir ~/.alternatives/admin'
 
+alias findscala='(find . -name "*.java";find . -name "*.scala") | sort | xargs grep --color'
+
+alias svndiff='svn diff | less'
+
