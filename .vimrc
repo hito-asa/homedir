@@ -95,6 +95,10 @@ au BufRead,BufNew * match JpSpace /　/
 highlight SpecialKey term=underline ctermfg=DarkYellow guifg=DarkYellow
 highlight JpSpace cterm=underline ctermfg=Blue guifg=Blue
 
+"=== netrw
+let g:netrw_hide=1
+let g:netrw_list_hide='^\.svn/$'
+
 "=== project
 "let g:proj_flags = "imstc"
 nmap <silent> <Leader>p <Plug>ToggleProject
