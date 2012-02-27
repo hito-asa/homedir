@@ -6,7 +6,6 @@ set rtp+=~/.vim/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'Smooth-Scroll'
 Bundle 'TwitVim'
 Bundle 'project.tar.gz'
 Bundle 'bufexplorer.zip'
@@ -57,6 +56,10 @@ inoremap <C-k> <Up>
 inoremap <C-l> <Right>
 map <PageUp> <C-U>
 map <PageDown> <C-D>
+
+"=== scroll-smooth & quick!
+map <C-U> <C-Y>2<C-Y>2<C-Y>2<C-Y>2<C-Y><C-Y>
+map <C-D> <C-E>2<C-E>2<C-E>2<C-E>2<C-E><C-E>
 
 "--- VimShell
 " ,is: シェルを起動

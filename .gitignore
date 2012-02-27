@@ -9,14 +9,20 @@
 !/.zshrc
 !/.zsh_aliases
 !/.screenrc
+!/.tmux.conf
 !/.vimrc
 !/.vim
 !/.vimprojects
 !/.ibus
 !/.ctags
 !/.gitignore
+!/.ssh
 
 /.vim/bundle
 /.vim/.VimballRecord
 /.vim/.netrwhist
-
+/.ssh/id_rsa
+/.ssh/id_rsa.pub
+/.ssh/aws
+/.ssh/known_hosts
+/.ssh/authorized_keys

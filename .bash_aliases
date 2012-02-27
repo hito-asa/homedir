@@ -28,6 +28,10 @@ alias py=ipython
 alias ualt='update-alternatives --altdir ~/.alternatives --admindir ~/.alternatives/admin'
 
 alias findscala='(find . -name "*.java";find . -name "*.scala") | sort | xargs grep --color'
+alias findphp='(find . -name "*.phtml";find . -name "*.php") | sort | xargs grep --color'
+alias findruby='(find . -name "*.rb";find . -name "*.erb") | sort | xargs grep --color'
 
 alias svndiff='svn diff | less'
+alias pin=ping
+alias codersync='rsync -CLrv --delete ~/work/codesnap/src tweb:/data/App/Boys'
 

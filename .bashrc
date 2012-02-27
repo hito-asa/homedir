@@ -78,5 +78,10 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# ruby
+if [ -f /home/hitoshi/.rvm/scripts/rvm ]; then
+    . /home/hitoshi/.rvm/scripts/rvm
+fi
+
 PS1='\W$ '
 

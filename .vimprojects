@@ -1,39 +1,110 @@
-openfollow=$HOME/work/github/prcm/open-follow CD=. filter="*.scala *.xml *.conf" {
- openfollow.conf
- project=project CD=. filter="**/*.scala **/*.sbt" {
+openfollow=$HOME/work/prcm/openfollow CD=. flags=S {
+ server=server CD=. filter="**/*.xml **/*.conf **/*.sh **/*.scala" flags=S {
+  config/api/product/classpath/logback.xml
+  config/api/product/classpath/openfollow.conf
+  config/api/product/gc_opts.conf
+  config/api/product/jetty.xml
+  config/api/st/classpath/logback.xml
+  config/api/st/classpath/openfollow.conf
+  config/api/st/gc_opts.conf
+  config/api/st/jetty.xml
+  config/kestrel/product/config.scala
+  config/kestrel/product/gc_opts.conf
+  config/kestrel/st/config.scala
+  config/kestrel/st/gc_opts.conf
+  config/worker/product/classpath/logback.xml
+  config/worker/product/classpath/openfollow.conf
+  config/worker/product/gc_opts.conf
+  config/worker/st/classpath/logback.xml
+  config/worker/st/classpath/openfollow.conf
+  config/worker/st/gc_opts.conf
+  db-conf/mongod.conf
+  db-script/allocate.sh
+  db-script/allocate_if_necessary.sh
+  db-script/backup.sh
+  db-script/env.sh
+  db-script/stats.sh
+  kestrel/scripts/qdump.sh
+  kestrel/scripts/qpack.sh
+  releasesh/build.sh
+  releasesh/deploy.sh
+  releasesh/env.sh
+  releasesh/maintenance.sh
+  releasesh/release.sh
+  releasesh/remote_restart.sh
+  releasesh/remote_start.sh
+  releasesh/remote_stop.sh
+  script/env.sh
+  script/restart.sh
+  script/start.sh
+  script/stats.sh
+  script/stop.sh
+ }
+ project=src/project CD=. filter="**/*.scala **/*.sbt" {
   OpenFollowBuild.scala
   plugins.sbt
  }
- api-src-main=openfollow-api/src/main/scala/jp/prcm/openfollow/api CD=. filter="**/*.scala" {
+ src=src CD=. filter="**/*.conf **/*.xml *.md" flags=S {
+  api/src/main/webapp/WEB-INF/web.xml
+  api/src/test/resources/logback.xml
+  api/src/test/resources/openfollow.conf
+  api/target/scala-2.9.1/test-classes/logback.xml
+  api/target/scala-2.9.1/test-classes/openfollow.conf
+  api/target/webapp/WEB-INF/web.xml
+  common/src/test/resources/logback.xml
+  common/src/test/resources/openfollow.conf
+  common/target/scala-2.9.1/test-classes/logback.xml
+  common/target/scala-2.9.1/test-classes/openfollow.conf
+  openfollow.conf
+  README.md
+  service/src/test/resources/logback.xml
+  service/src/test/resources/openfollow.conf
+  service/target/scala-2.9.1/test-classes/logback.xml
+  service/target/scala-2.9.1/test-classes/openfollow.conf
+  worker/src/test/resources/logback.xml
+  worker/src/test/resources/openfollow.conf
+  worker/target/scala-2.9.1/test-classes/logback.xml
+  worker/target/scala-2.9.1/test-classes/openfollow.conf
+ }
+ api=src/api/src/main/scala/jp/prcm/openfollow/api CD=. filter="**/*.conf **/*.scala" {
   Authenticate.scala
+  ContextListener.scala
   DebugAPI.scala
   DefaultAPI.scala
   FollowersAPI.scala
   FriendsAPI.scala
   FriendshipsAPI.scala
+  MaintenanceSupport.scala
   ScalatraFilter.scala
   StatusesAPI.scala
   UsersAPI.scala
   UsersCommon.scala
  }
- worker-src-main=openfollow-worker/src/main/scala/jp/prcm/openfollow/worker CD=. filter="**/*.scala" {
+ worker=src/worker/src/main/scala/jp/prcm/openfollow/worker CD=. filter="**/*.scala" {
+  DeleteProcessor.scala
+  FollowProcessor.scala
   Main.scala
+  PostProcessor.scala
+  Processor.scala
   ProcessorSupervisor.scala
+  ProcessorUtil.scala
   QueueMonitor.scala
   RootSupervisor.scala
   StopHandler.scala
   Supervisor.scala
-  package.scala
+  UnfollowProcessor.scala
+  UserDeleteProcessor.scala
  }
- common-src-main=openfollow-common/src/main/scala/jp/prcm/openfollow/common CD=. filter="**/*.scala" {
+ common=src/common/src/main/scala/jp/prcm/openfollow/common CD=. filter="**/*.scala" {
   AbstractDB.scala
   DB.scala
   InternalMainDB.scala
   TimelineDB.scala
-  config/Config.scala
+  config/package.scala
   entity/FollowEntry.scala
   entity/Followees.scala
   entity/Followers.scala
+  entity/HomeTimeline.scala
   entity/IdGenerator.scala
   entity/JsonEntity.scala
   entity/Service.scala
@@ -41,30 +112,152 @@ openfollow=$HOME/work/github/prcm/open-follow CD=. filter="*.scala *.xml *.conf"
   entity/TimelineIndex.scala
   entity/User.scala
   log/Logger.scala
-  log/MongoDBAppender.scala
-  log/UpdateLogPhaseType.scala
   package.scala
   queue/Kestrel.scala
   queue/Queue.scala
-  util/ManifestNotNothing.scala
-  util/NotImplementedError.scala
-  util/Reflection.scala
-  util/ScalazArm.scala
-  util/Serializer.scala
-  util/Thread.scala
   util/Timer.scala
   util/Util.scala
  }
- service-src-main=openfollow-service/src/main/scala/jp/prcm/openfollow/service CD=. filter="**/*.scala" {
+ service=src/service/src/main/scala/jp/prcm/openfollow/service CD=. filter="**/*.scala" {
   DebugService.scala
   FriendshipsService.scala
-  HomeTimeline.scala
-  RecommendService.scala
-  ServiceService.scala
+  HomeTimelineService.scala
   StatusesService.scala
-  TimelineIndexService.scala
   UsersService.scala
-  WriteBuffer.scala
  }
 }
-
+analytics=$HOME/work/prcm/analytics CD=. filter="*.xml" {
+ pom.xml
+ api=prcm-analytics-api CD=. filter="*.xml" {
+  pom.xml
+  ext_resouce=ext_resources CD=. filter="**/*.xml **/*.conf" {
+   product/jetty-context.xml
+   product/jetty-server.xml
+   st/jetty-context.xml
+   st/jetty-server.xml
+  }
+  resouce=src/main/resources CD=. filter="**/*.xml **/*.conf" {
+   local/logback.xml
+   product/logback.xml
+   st/logback.xml
+   local/prcm-analytics.conf
+   product/prcm-analytics.conf
+   st/prcm-analytics.conf
+  }
+  src=src/main/scala/jp/prcm/analytics/api CD=. filter="**/*.scala" {
+   AnalyticsDatastore.scala
+   AnalyticsInfoApi.scala
+   GazoIdDecoder.scala
+   KpiDatastore.scala
+   KpiSearchApi.scala
+   RecommendApi.scala
+   RecommenderDatastore.scala
+   package.scala
+  }
+ }
+ common=prcm-analytics-common CD=. filter="*.xml" {
+  pom.xml
+  src=src/main/scala/jp/prcm/analytics CD=. filter="**/*.scala" {
+   common/util/GazoIdCodec.scala
+   common/util/KanaTransformer.scala
+   common/util/KeywordSanitizer.scala
+   common/util/NGWordChecker.scala
+   hadoop/common/config/Config.scala
+   hadoop/common/datastore/Databases.scala
+   hadoop/common/datastore/Hash.scala
+   hadoop/common/datastore/ListMember.scala
+   hadoop/common/datastore/Redis.scala
+   hadoop/common/datastore/ReturnType.scala
+   hadoop/common/datastore/SetMember.scala
+   hadoop/common/datastore/ShardedJedisPool.scala
+   hadoop/common/datastore/datastore.scala
+   hadoop/common/entity/GazoRelation.scala
+   hadoop/common/entity/GazoViews.scala
+   hadoop/common/entity/ItemRelation.scala
+   hadoop/common/entity/ItemViews.scala
+   hadoop/common/entity/KeywordRelation.scala
+   hadoop/common/entity/KeywordViews.scala
+   hadoop/common/entity/Kpi.scala
+   hadoop/common/entity/RefererDomainSummary.scala
+   hadoop/common/entity/SearchKeywordSummary.scala
+   hadoop/common/logger/Logger.scala
+   hadoop/common/recommend/RecommendRedis.scala
+  }
+ }
+}
+fluentd=$HOME/work/github/fluent/fluentd CD=. filter="*" {
+ AUTHORS
+ COPYING
+ ChangeLog
+ Gemfile
+ Makefile.am
+ README.rdoc
+ Rakefile
+ VERSION
+ autogen.sh
+ configure.in
+ fluent.conf
+ fluentd.gemspec
+ lib=$HOME/work/github/fluent/fluentd/lib/fluent CD=. filter="*" {
+  buffer.rb
+  config.rb
+  engine.rb
+  env.rb
+  event.rb
+  input.rb
+  load.rb
+  log.rb
+  match.rb
+  mixin.rb
+  output.rb
+  parser.rb
+  plugin.rb
+  process.rb
+  status.rb
+  supervisor.rb
+  test.rb
+  version.rb
+  command=$HOME/work/github/fluent/fluentd/lib/fluent/command CD=. filter="**/*" {
+   cat.rb
+   fluentd.rb
+  }
+  plugin=$HOME/work/github/fluent/fluentd/lib/fluent/plugin CD=. filter="**/*" {
+   buf_file.rb
+   buf_memory.rb
+   buf_zfile.rb
+   in_exec.rb
+   in_forward.rb
+   in_http.rb
+   in_status.rb
+   in_stream.rb
+   in_syslog.rb
+   in_tail.rb
+   out_copy.rb
+   out_exec.rb
+   out_exec_filter.rb
+   out_file.rb
+   out_forward.rb
+   out_null.rb
+   out_roundrobin.rb
+   out_stdout.rb
+   out_stream.rb
+   out_test.rb
+  }
+  test=$HOME/work/github/fluent/fluentd/lib/fluent/test CD=. filter="**/*" {
+   base.rb
+   input_test.rb
+   output_test.rb
+  }
+ }
+ bin=$HOME/work/github/fluent/fluentd/bin CD=. filter="*" {
+  fluent-cat
+  fluent-gem
+  fluentd
+ }
+ test=$HOME/work/github/fluent/fluentd/test CD=. filter="*" {
+  config.rb
+  helper.rb
+  match.rb
+  mixin.rb
+ }
+}
