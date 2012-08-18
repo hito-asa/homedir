@@ -10,6 +10,7 @@ Bundle 'TwitVim'
 Bundle 'project.tar.gz'
 Bundle 'bufexplorer.zip'
 Bundle 'sudo.vim'
+Bundle 'Lokaltog/vim-powerline'
 
 filetype plugin indent on
 
@@ -76,13 +77,8 @@ map <C-D> <C-E>2<C-E>2<C-E>2<C-E>2<C-E><C-E>
 "nnoremap <silent> ,ss <S-v>:VimShellSendString
 
 
-"=== syntax
-if $t_Co > 1
-  syntax enable
-endif
-filetype indent on
-
 "=== color
+set t_Co=256
 colorscheme wombat
 highlight clear CursorLine
 highlight CursorLine gui=underline
@@ -90,6 +86,12 @@ highlight CursorLine ctermbg=black guibg=black
 if g:colors_name ==? 'wombat'
   hi Visual gui=none guifg=khaki guibg=olivedrab
 endif
+
+"=== syntax
+if $t_Co > 1
+  syntax enable
+endif
+filetype indent on
 
 "=== control code display
 set list
@@ -101,6 +103,9 @@ highlight JpSpace cterm=underline ctermfg=Blue guifg=Blue
 "=== netrw
 let g:netrw_hide=1
 let g:netrw_list_hide='^\.svn/$'
+
+"=== powerline
+let g:Powerline_symbols = 'fancy'
 
 "=== project
 "let g:proj_flags = "imstc"
