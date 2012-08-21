@@ -11,6 +11,9 @@ Bundle 'project.tar.gz'
 Bundle 'bufexplorer.zip'
 Bundle 'sudo.vim'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/vimproc'
+Bundle 'aharisu/vim_goshrepl'
 
 filetype plugin indent on
 
@@ -21,7 +24,6 @@ set ruler
 set laststatus=2
 set title
 set linespace=0
-set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']['.&filetype.']'}%=%l,%c%V%8P
 set wildmenu
 set nowrap
 set cursorline
@@ -44,8 +46,6 @@ set tags=~/.tags
 if filereadable(".tags")
   set tags+=.tags
 endif
-set tags+=/usr/local/java/jdk1.7.0/src/tags
-set tags+=/usr/local/scala/scala-2.9.1.final/src/tags
 
 "=== basic keybind
 noremap j gj
@@ -61,21 +61,6 @@ map <PageDown> <C-D>
 "=== scroll-smooth & quick!
 map <C-U> <C-Y>2<C-Y>2<C-Y>2<C-Y>2<C-Y><C-Y>
 map <C-D> <C-E>2<C-E>2<C-E>2<C-E>2<C-E><C-E>
-
-"--- VimShell
-" ,is: シェルを起動
-"nnoremap <silent> ,is :VimShell
-" ,ipy: pythonを非同期で起動
-"nnoremap <silent> ,ipy :VimShellInteractive python
-" ,irb: irbを非同期で起動
-"nnoremap <silent> ,irb :VimShellInteractive irb
-" ,ss: 非同期で開いたインタプリタに現在の行を評価させる
-"vmap <silent> ,ss :VimShellSendString
-" ,sb: 非同期で開いたインタプリタに現在の行を評価させる
-"vmap <silent> ,sb :VimShellSendBuffer
-" 選択中に,ss: 非同期で開いたインタプリタに選択行を評価させる
-"nnoremap <silent> ,ss <S-v>:VimShellSendString
-
 
 "=== color
 set t_Co=256
@@ -106,6 +91,9 @@ let g:netrw_list_hide='^\.svn/$'
 
 "=== powerline
 let g:Powerline_symbols = 'fancy'
+
+"=== neocomplcache
+let g:neocomplcache_enable_at_startup = 1
 
 "=== project
 "let g:proj_flags = "imstc"

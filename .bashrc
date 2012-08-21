@@ -83,5 +83,8 @@ if [ -f /home/hitoshi/.rvm/scripts/rvm ]; then
     . /home/hitoshi/.rvm/scripts/rvm
 fi
 
+# gauche
+export RLWRAP_EDITOR='vim -c "set filetype=scheme"'
+
 PS1='\W$ '
 
