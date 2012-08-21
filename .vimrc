@@ -1,19 +1,21 @@
 set nocompatible
 filetype off
 
-"=== initialize vundle
-set rtp+=~/.vim/vundle/
-call vundle#rc()
+"=== initialize neobundle
+if has('vim_starting')
+  set runtimepath+=~/.vim/neobundle
+  call neobundle#rc(expand('~/.vim/bundle'))
+endif
 
-Bundle 'gmarik/vundle'
-Bundle 'TwitVim'
-Bundle 'project.tar.gz'
-Bundle 'bufexplorer.zip'
-Bundle 'sudo.vim'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/vimproc'
-Bundle 'aharisu/vim_goshrepl'
+NeoBundle 'gmarik/vundle'
+NeoBundle 'TwitVim'
+NeoBundle 'project.tar.gz'
+NeoBundle 'bufexplorer.zip'
+NeoBundle 'sudo.vim'
+NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'aharisu/vim_goshrepl'
 
 filetype plugin indent on
 
