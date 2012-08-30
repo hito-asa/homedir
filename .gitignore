@@ -19,6 +19,7 @@
 !/.ssh
 
 /.vim/bundle
+/.vim/backup/*
 /.vim/.VimballRecord
 /.vim/.netrwhist
 /.ssh/id_rsa

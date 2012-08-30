@@ -29,7 +29,8 @@ set linespace=0
 set wildmenu
 set nowrap
 set cursorline
-set nobackup
+set backup
+set backupdir=$HOME/.vim/backup
 set autoread
 set noswapfile
 set hidden
