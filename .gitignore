@@ -17,13 +17,13 @@
 !/.ctags
 !/.gitignore
 !/.ssh
+!/.fonts
 
 /.vim/bundle
 /.vim/backup/*
 /.vim/.VimballRecord
 /.vim/.netrwhist
 /.ssh/id_rsa
-/.ssh/id_rsa.pub
 /.ssh/aws
 /.ssh/known_hosts
 /.ssh/authorized_keys
