@@ -29,7 +29,8 @@ set linespace=0
 set wildmenu
 set nowrap
 set cursorline
-set nobackup
+set backup
+set backupdir=$HOME/.vim/backup
 set autoread
 set noswapfile
 set hidden
@@ -39,7 +40,7 @@ set smartcase
 set wrapscan
 set hlsearch
 set incsearch
-set autoindent
+set autoindent sw=2 et
 set cindent
 set backspace=indent,eol,start
 

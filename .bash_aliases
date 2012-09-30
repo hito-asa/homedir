@@ -35,3 +35,6 @@ alias svndiff='svn diff | less'
 alias pin=ping
 alias codersync='rsync -CLrv --delete ~/work/codesnap/src tweb:/data/App/Boys'
 
+# scheme
+alias gosh='rlwrap -mc gosh'
+
