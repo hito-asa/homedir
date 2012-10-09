@@ -18,6 +18,7 @@
 !/.gitignore
 !/.ssh
 !/.fonts
+!/.gitconfig
 
 /.vim/bundle
 /.vim/backup/*
