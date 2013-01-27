@@ -7,7 +7,6 @@ if has('vim_starting')
   call neobundle#rc(expand('~/.vim/bundle'))
 endif
 
-NeoBundle 'gmarik/vundle'
 NeoBundle 'TwitVim'
 NeoBundle 'project.tar.gz'
 NeoBundle 'bufexplorer.zip'
@@ -16,6 +15,7 @@ NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'aharisu/vim_goshrepl'
+NeoBundle 'scratch.vim'
 
 filetype plugin indent on
 
@@ -88,6 +88,9 @@ au BufRead,BufNew * match JpSpace /　/
 highlight SpecialKey term=underline ctermfg=DarkYellow guifg=DarkYellow
 highlight JpSpace cterm=underline ctermfg=Blue guifg=Blue
 
+"=== keep edit position
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
 "=== netrw
 let g:netrw_hide=1
 let g:netrw_list_hide='^\.svn/$'
@@ -113,17 +116,17 @@ let twitvim_enable_python = 1
 let twitvim_show_header = 0
 
 "=== IME control
-if stridx(system('uname -a'), "Ubuntu") >= 0 && $USER != "root"
-  au InsertLeave * call PyIBusDisable()
-  function! PyIBusDisable()
-python << EOF
-import ibus
-bus = ibus.Bus()
-ic = ibus.InputContext(bus, bus.current_input_contxt())
-ic.disable()
-EOF
-  endfunction
-endif
+"if stridx(system('uname -a'), "Ubuntu") >= 0 && $USER != "root"
+"  au InsertLeave * call PyIBusDisable()
+"  function! PyIBusDisable()
+"python << EOF
+"import ibus
+"bus = ibus.Bus()
+"ic = ibus.InputContext(bus, bus.current_input_contxt())
+"ic.disable()
+"EOF
+"  endfunction
+"endif
 
 "=== external config
 if filereadable(expand('~/.vimrc.unshared'))
