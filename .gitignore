@@ -24,6 +24,7 @@
 /.vim/backup/*
 /.vim/.VimballRecord
 /.vim/.netrwhist
+/.fonts/*
 /.ssh/id_rsa
 /.ssh/aws
 /.ssh/known_hosts
