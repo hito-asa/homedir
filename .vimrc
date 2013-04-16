@@ -16,6 +16,8 @@ NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'aharisu/vim_goshrepl'
 NeoBundle 'scratch.vim'
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'chreekat/vim-instant-markdown'
 
 filetype plugin indent on
 
@@ -132,4 +134,5 @@ let twitvim_show_header = 0
 if filereadable(expand('~/.vimrc.unshared'))
   so ~/.vimrc.unshared
 endif
+
 
