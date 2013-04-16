@@ -85,7 +85,12 @@ fi
 
 # ruby
 if [ -f /home/hitoshi/.rvm/scripts/rvm ]; then
-    . /home/hitoshi/.rvm/scripts/rvm
+    . $HOME/.rvm/scripts/rvm
+fi
+
+# perl
+if [ -s "$HOME/perl5/perlbrew/etc/bashrc" ]; then
+  . $HOME/perl5/perlbrew/etc/bashrc
 fi
 
 # gauche
