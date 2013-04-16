@@ -38,3 +38,5 @@ alias codersync='rsync -CLrv --delete ~/work/codesnap/src tweb:/data/App/Boys'
 # scheme
 alias gosh='rlwrap -mc gosh'
 
+alias tcp_ga="sudo tcpflow -ec dst host www.google-analytics.com and dst port 80 -i eth0"
+
