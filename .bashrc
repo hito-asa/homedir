@@ -70,6 +70,11 @@ if [ -f ~/.bash_env ]; then
   . ~/.bash_env
 fi
 
+# UNMANAGED Environment definitions
+if [ -f ~/.bash_env_unmanaged ]; then
+  . ~/.bash_env_unmanaged
+fi
+
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
