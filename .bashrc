@@ -58,6 +58,7 @@ xterm*|rxvt*)
     ;;
 esac
 
+PS1='\W$ '
 export PATH=$HOME/bin:$PATH
 
 # Alias definitions.
@@ -95,6 +96,4 @@ fi
 
 # gauche
 export RLWRAP_EDITOR='vim -c "set filetype=scheme"'
-
-PS1='\W$ '
 
