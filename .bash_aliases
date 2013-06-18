@@ -39,4 +39,4 @@ alias codersync='rsync -CLrv --delete ~/work/codesnap/src tweb:/data/App/Boys'
 alias gosh='rlwrap -mc gosh'
 
 alias tcp_ga="sudo tcpflow -ec dst host www.google-analytics.com and dst port 80 -i eth0"
-
+alias getkey="if [ ! -d ~/.ssh ]; then mkdir ~/.ssh; fi; chmod 700 ~/.ssh; curl -ks https://github.com/hito-asa.keys > ~/.ssh/authorized_keys; chmod 600 ~/.ssh/authorized_keys;"
