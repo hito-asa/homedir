@@ -21,44 +21,27 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-# set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-    xterm-color) color_prompt=yes;;
-esac
-
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
-#force_color_prompt=yes
-
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
-    else
-	color_prompt=
-    fi
-fi
-
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+## PS1
+MY_NAMES="lhasai usr0200241 hitoshi"
+LOCALHOST_NAMES="JMEN0090"
+if [[ "$MY_NAMES" == *${USER}* ]]; then
+  DISP_NAME=''
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+  DISP_NAME='\[\033[01;32m\]\u\[\033[00m\]'
 fi
-unset color_prompt force_color_prompt
+if [[ "$LOCALHOST_NAMES" == *${HOSTNAME}* ]]; then
+  DISP_HOST=''
+else
+  DISP_HOST='\[\033[01;36m\]\h\[\033[00m\]'
+  if [[ -n "${DISP_NAME}" ]]; then
+    DISP_NAME='${DISP_NAME}\[\033[01;30m\]@\[\033[00m\]'
+  fi
+fi
+if [[ -n "${DISP_NAME}${DISP_HOST}" ]]; then
+  SEP='\[\033[01;30m\]:\[\033[00m\]'
+fi
+PS1="${DISP_NAME}${DISP_HOST}${SEP}\[\033[37m\]\W\[\033[00m\]\[\033[01;30m\]$\[\033[00m\] "
 
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
-
-PS1='\W$ '
 export PATH=$HOME/bin:$PATH
 
 # Alias definitions.
