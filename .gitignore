@@ -26,6 +26,7 @@
 /.vim/.netrwhist
 /.fonts/*
 /.ssh/id_rsa
+/.ssh/config
 /.ssh/aws
 /.ssh/known_hosts
 /.ssh/authorized_keys
