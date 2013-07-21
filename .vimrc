@@ -18,6 +18,7 @@ NeoBundle 'aharisu/vim_goshrepl'
 NeoBundle 'scratch.vim'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'chreekat/vim-instant-markdown'
+NeoBundle 'tpope/vim-fugitive'
 
 filetype plugin indent on
 
