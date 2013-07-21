@@ -23,7 +23,7 @@ fi
 
 ## PS1
 MY_NAMES="lhasai usr0200241 hitoshi"
-LOCALHOST_NAMES="JMEN0090"
+LOCALHOST_NAMES="JMEN0090 ubuntu"
 if [[ "$MY_NAMES" == *${USER}* ]]; then
   DISP_NAME=''
 else
@@ -39,6 +39,8 @@ else
 fi
 if [[ -n "${DISP_NAME}${DISP_HOST}" ]]; then
   SEP='\[\033[01;30m\]:\[\033[00m\]'
+else
+  SEP=''
 fi
 PS1="${DISP_NAME}${DISP_HOST}${SEP}\[\033[37m\]\W\[\033[00m\]\[\033[01;30m\]$\[\033[00m\] "
 
