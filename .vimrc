@@ -68,6 +68,10 @@ map <PageDown> <C-D>
 map <C-U> <C-Y>2<C-Y>2<C-Y>2<C-Y>2<C-Y><C-Y>
 map <C-D> <C-E>2<C-E>2<C-E>2<C-E>2<C-E><C-E>
 
+"=== syntax
+syntax enable
+filetype indent on
+
 "=== color
 set t_Co=256
 colorscheme wombat
@@ -77,12 +81,6 @@ highlight CursorLine ctermbg=black guibg=black
 if g:colors_name ==? 'wombat'
   hi Visual gui=none guifg=khaki guibg=olivedrab
 endif
-
-"=== syntax
-if $t_Co > 1
-  syntax enable
-endif
-filetype indent on
 
 "=== control code display
 set list
@@ -135,5 +133,4 @@ let twitvim_show_header = 0
 if filereadable(expand('~/.vimrc.unshared'))
   so ~/.vimrc.unshared
 endif
-
 
