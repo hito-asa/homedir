@@ -19,6 +19,7 @@
 !/.ssh
 !/.fonts
 !/.gitconfig
+!/.externals
 
 /.vim/bundle
 /.vim/backup/*
