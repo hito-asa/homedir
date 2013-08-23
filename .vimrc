@@ -11,7 +11,7 @@ NeoBundle 'TwitVim'
 NeoBundle 'project.tar.gz'
 NeoBundle 'bufexplorer.zip'
 NeoBundle 'sudo.vim'
-NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'bling/vim-airline'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'aharisu/vim_goshrepl'
@@ -97,7 +97,7 @@ let g:netrw_hide=1
 let g:netrw_list_hide='^\.svn/$'
 
 "=== powerline
-let g:Powerline_symbols = 'fancy'
+let g:airline_powerline_fonts=1
 
 "=== neocomplcache
 let g:neocomplcache_enable_at_startup = 1
