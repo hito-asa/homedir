@@ -98,6 +98,13 @@ let g:netrw_list_hide='^\.svn/$'
 
 "=== powerline
 let g:airline_powerline_fonts=1
+let g:airline_left_sep = '⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep = '⮂'
+let g:airline_right_alt_sep = '⮃'
+let g:airline#extensions#branch#symbol = '⭠'
+let g:airline#extensions#readonly#symbol = '⭤'
+let g:airline_linecolumn_prefix = '⭡'
 
 "=== neocomplcache
 let g:neocomplcache_enable_at_startup = 1
