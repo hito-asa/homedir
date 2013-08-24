@@ -20,6 +20,7 @@
 !/.fonts
 !/.gitconfig
 !/.externals
+!/.tmux-powerlinerc
 
 /.vim/bundle
 /.vim/backup/*
