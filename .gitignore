@@ -21,6 +21,7 @@
 !/.gitconfig
 !/.externals
 !/.tmux-powerlinerc
+!/.byobu
 
 /.vim/bundle
 /.vim/backup/*
