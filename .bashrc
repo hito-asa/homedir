@@ -70,7 +70,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # ruby
-if [ -f /home/hitoshi/.rvm/scripts/rvm ]; then
+if [ -f $HOME/.rvm/scripts/rvm ]; then
     . $HOME/.rvm/scripts/rvm
 fi
 
