@@ -19,6 +19,7 @@ NeoBundle 'scratch.vim'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'chreekat/vim-instant-markdown'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'airblade/vim-gitgutter'
 
 filetype plugin indent on
 
@@ -101,6 +102,9 @@ let g:airline_detect_modified=1
 let g:airline_detect_paste=1
 let g:airline_detect_iminsert=1
 let g:airline_inactive_collapse=1
+let g:airline#extensions#hunks#enabled = 1
+let g:airline#extensions#hunks#non_zero_only = 0
+let g:airline#extensions#hunks#hunk_symbols = ['+', '~', '-']
 let g:airline_theme="wombat"
 let g:airline_powerline_fonts=0
 let g:airline_symbols = {'paste':1, 'readonly':2, 'whitespace':3, 'linenr':4, 'branch':5}
@@ -111,6 +115,12 @@ let g:airline_right_alt_sep = '⮃'
 let g:airline_symbols.branch = '⭠'
 let g:airline_symbols.readonly = '⭤'
 let g:airline_symbols.linenr = '⭡'
+
+"=== git
+let g:gitgutter_enabled = 0
+let g:gitgutter_signs = 1
+let g:gitgutter_highlight_lines = 1
+highlight clear SignColumn
 
 "=== neocomplcache
 let g:neocomplcache_enable_at_startup = 1
