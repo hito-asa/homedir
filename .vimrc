@@ -97,14 +97,20 @@ let g:netrw_hide=1
 let g:netrw_list_hide='^\.svn/$'
 
 "=== powerline
-let g:airline_powerline_fonts=1
+let g:airline_detect_modified=1
+let g:airline_detect_paste=1
+let g:airline_detect_iminsert=1
+let g:airline_inactive_collapse=1
+let g:airline_theme="wombat"
+let g:airline_powerline_fonts=0
+let g:airline_symbols = {'paste':1, 'readonly':2, 'whitespace':3, 'linenr':4, 'branch':5}
 let g:airline_left_sep = '⮀'
 let g:airline_left_alt_sep = '⮁'
 let g:airline_right_sep = '⮂'
 let g:airline_right_alt_sep = '⮃'
-let g:airline_branch_prefix = '⭠'
-let g:airline_readonly_symbol = '⭤'
-let g:airline_linecolumn_prefix = '⭡'
+let g:airline_symbols.branch = '⭠'
+let g:airline_symbols.readonly = '⭤'
+let g:airline_symbols.linenr = '⭡'
 
 "=== neocomplcache
 let g:neocomplcache_enable_at_startup = 1
