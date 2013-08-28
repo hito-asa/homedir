@@ -83,7 +83,7 @@ fi
 export RLWRAP_EDITOR='vim -c "set filetype=scheme"'
 
 ssh() {
-  cat $HOME/.ssh/config/* > $HOME/.ssh/_merged_config
+  cat $HOME/.ssh/configs/* > $HOME/.ssh/_merged_config
   ssh_cmd="ssh -F $HOME/.ssh/_merged_config $@"
   tmux new-window "$ssh_cmd"
 }
