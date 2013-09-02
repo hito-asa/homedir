@@ -32,7 +32,5 @@
 /.ssh/*
 !/.ssh/*.pub
 !/.ssh/*/*.pub
-!/.ssh/config
-/.ssh/configs/*
-!/.ssh/config/public
+!/.ssh/configs/public
 
