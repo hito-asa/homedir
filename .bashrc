@@ -86,7 +86,9 @@ ssh() {
   cat $HOME/.ssh/configs/* > $HOME/.ssh/_merged_config
   ssh_cmd="/usr/bin/ssh -F $HOME/.ssh/_merged_config $@"
   if [ -z "$TMUX" ]; then
+    printf "\\033k${!#}\\033\\\\"
     $ssh_cmd
+    printf "\\033k${HOSTNAME}\\033\\\\"
   else
     tmux new-window -n ${!#} "$ssh_cmd"
   fi
