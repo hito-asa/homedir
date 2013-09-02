@@ -88,6 +88,6 @@ ssh() {
   if [ -z "$TMUX" ]; then
     $ssh_cmd
   else
-    tmux new-window "$ssh_cmd"
+    tmux new-window -n ${!#} "$ssh_cmd"
   fi
 }

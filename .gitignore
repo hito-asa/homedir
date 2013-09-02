@@ -33,6 +33,6 @@
 !/.ssh/*.pub
 !/.ssh/*/*.pub
 !/.ssh/config
-/.ssh/config/*
+/.ssh/configs/*
 !/.ssh/config/public
 
