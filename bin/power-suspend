@@ -1,0 +1,8 @@
+#!/bin/bash
+if [ -z "$XDG_CURRENT_DESKTOP" ]; then
+  sudo pm-suspend
+else
+  gnome-screensaver-command --lock &
+  dbus-send --print-reply --system --dest=org.freedesktop.UPower /org/freedesktop/UPower org.freedesktop.UPower.Suspend
+fi
+
