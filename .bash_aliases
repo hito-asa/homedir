@@ -42,4 +42,13 @@ alias tcp_ga="sudo tcpflow -ec dst host www.google-analytics.com and dst port 80
 alias getkey="if [ ! -d ~/.ssh ]; then mkdir ~/.ssh; fi; chmod 700 ~/.ssh; curl -ks https://github.com/hito-asa.keys > ~/.ssh/authorized_keys; chmod 600 ~/.ssh/authorized_keys;"
 
 # git
-alias gs="git status"
+alias g="git"
+alias gs="git status -s -b -uall"
+alias gc="git checkout"
+alias gcb="git checkout"
+alias ga="git add"
+alias gai="git add -i"
+alias gap="git add -p"
+alias gf="git fetch"
+alias gm="git merge"
+
