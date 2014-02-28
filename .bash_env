@@ -1,11 +1,3 @@
-export JAVA_HOME=/usr/lib/jvm/jdk1.7.0_03
-export EC2_URL=https://ec2.ap-northeast-1.amazonaws.com
-export EC2_PRIVATE_KEY=$HOME/.ssh/aws/pk-PGQEBA4Z5PV2FIGXVZ2MOPIVWYP3Q7HC.pem
-export EC2_CERT=$HOME/.ssh/aws/cert-PGQEBA4Z5PV2FIGXVZ2MOPIVWYP3Q7HC.pem
-export CS_HOME=/usr/local/aws/cloud-search-tools
-export AWS_CREDENTIAL_FILE=/home/hitoshi/.ssh/aws/hitoshi.iam
 export GIT_EDITOR=vim
-
 export FIGNORE=${FIGNORE}:.svn
 export GREP_OPTIONS="--color"
-export PATH=$PATH:$CS_HOME/bin
