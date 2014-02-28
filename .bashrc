@@ -23,7 +23,7 @@ fi
 
 ## PS1
 MY_NAMES="lhasai usr0200241 hitoshi"
-LOCALHOST_NAMES="JMEN0090 ubuntu"
+LOCALHOST_NAMES="jmen0090 ubuntu"
 if [[ "$MY_NAMES" == *${USER}* ]]; then
   DISP_NAME=''
 else
@@ -93,3 +93,4 @@ ssh() {
     tmux new-window -n ${!#} "$ssh_cmd"
   fi
 }
+
