@@ -47,6 +47,7 @@ set incsearch
 set autoindent sw=2 et
 set cindent
 set backspace=indent,eol,start
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 
 "=== tags
 set tags=~/.tags
@@ -151,6 +152,13 @@ let twitvim_show_header = 0
 "EOF
 "  endfunction
 "endif
+
+augroup BinaryXXD
+  autocmd!
+  autocmd BufReadPre  *.bin let &binary =1
+  autocmd BufReadPost * if &binary | silent %!xxd -g 2
+  autocmd BufReadPost * set ft=xxd | endif
+augroup END
 
 "=== external config
 if filereadable(expand('~/.vimrc.unshared'))
