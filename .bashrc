@@ -83,8 +83,8 @@ fi
 export RLWRAP_EDITOR='vim -c "set filetype=scheme"'
 
 ssh() {
-  cat $HOME/.ssh/configs/* > $HOME/.ssh/_merged_config
-  ssh_cmd="/usr/bin/ssh -F $HOME/.ssh/_merged_config $@"
+  cat $HOME/.ssh/configs/* > $HOME/.ssh/config
+  ssh_cmd="/usr/bin/ssh -F $HOME/.ssh/config $@"
   if [ -z "$TMUX" ]; then
     printf "\\033k${!#}\\033\\\\"
     $ssh_cmd
