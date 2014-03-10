@@ -52,3 +52,7 @@ alias gap="git add -p"
 alias gf="git fetch"
 alias gm="git merge"
 
+# typo
+alias kk="echo -e '\n\n　　　＿人人人＿\n　　　＞　kk　＜\n　　　￣Y^Y^Y^￣\n\n　　　　　　　　　　m9(^Д^)'"
+
+
