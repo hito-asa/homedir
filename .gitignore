@@ -23,7 +23,9 @@
 !/.tmux-powerlinerc
 !/.byobu
 !/bin
+!/.gemrc
 
+/.byobu/.ssh-agent
 /.vim/bundle
 /.vim/backup/*
 !/.vim/backup/.gitkeep
