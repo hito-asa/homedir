@@ -24,6 +24,7 @@
 !/.byobu
 !/bin
 !/.gemrc
+!/.emerald
 
 /.byobu/.ssh-agent
 /.vim/bundle
@@ -36,4 +37,6 @@
 !/.ssh/*.pub
 !/.ssh/*/*.pub
 !/.ssh/configs/public
+/.emerald/themes/
+/.emerald/packages/
 
