@@ -25,6 +25,7 @@
 !/bin
 !/.gemrc
 !/.emerald
+!/.setup.sh
 
 /.byobu/.ssh-agent
 /.vim/bundle
