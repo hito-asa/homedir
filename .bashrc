@@ -23,20 +23,12 @@ fi
 
 ## PS1
 MY_NAMES="lhasai usr0200241 hitoshi"
-LOCALHOST_NAMES="jmen0090 ubuntu"
 if [[ "$MY_NAMES" == *${USER}* ]]; then
   DISP_NAME=''
 else
   DISP_NAME='\[\033[01;32m\]\u\[\033[00m\]'
 fi
-if [[ "$LOCALHOST_NAMES" == *${HOSTNAME}* ]]; then
-  DISP_HOST=''
-else
-  DISP_HOST='\[\033[01;36m\]\h\[\033[00m\]'
-  if [[ -n "${DISP_NAME}" ]]; then
-    DISP_NAME='${DISP_NAME}\[\033[01;30m\]@\[\033[00m\]'
-  fi
-fi
+DISP_HOST=''
 if [[ -n "${DISP_NAME}${DISP_HOST}" ]]; then
   SEP='\[\033[01;30m\]:\[\033[00m\]'
 else
