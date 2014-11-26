@@ -9,7 +9,7 @@ wget -q -O - https://www.hipchat.com/keys/hipchat-linux.key | sudo apt-key add -
 sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 sudo sh -c 'echo "deb http://downloads.hipchat.com/linux/apt stable main" >> /etc/apt/sources.list.d/atlassian-hipchat.list'
 sudo apt-get update
-sudo apt-get install -y xubuntu-desktop git byobu vim aptitude fcitx-mozc curl google-chrome-stable compiz compizconfig-settings-manager vlc libdvdread4 gedit emerald compiz-plugins nautilus tree vpnc network-manager-vpnc synaptic gdebi-core xubuntu-restricted-extras libavcodec-extra keepassx hipchat arandr
+sudo apt-get install -y xubuntu-desktop git byobu vim aptitude fcitx-mozc curl google-chrome-stable compiz compizconfig-settings-manager vlc libdvdread4 gedit emerald compiz-plugins nautilus tree vpnc network-manager-vpnc synaptic gdebi-core xubuntu-restricted-extras libavcodec-extra keepassx hipchat arandr nkf
 
 #dvd
 sudo /usr/share/doc/libdvdread4/install-css.sh
