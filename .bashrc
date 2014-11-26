@@ -74,6 +74,13 @@ fi
 # gauche
 export RLWRAP_EDITOR='vim -c "set filetype=scheme"'
 
+# Grooby
+[[ -s "/home/usr0200241/.gvm/bin/gvm-init.sh" ]] && source "/home/usr0200241/.gvm/bin/gvm-init.sh"
+
+# Node
+export NVM_DIR="/home/usr0200241/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
 ssh() {
   cat $HOME/.ssh/configs/* > $HOME/.ssh/config
   ssh_cmd="/usr/bin/ssh -F $HOME/.ssh/config $@"
