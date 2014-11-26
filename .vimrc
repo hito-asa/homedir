@@ -20,6 +20,7 @@ NeoBundle 'tpope/vim-markdown'
 NeoBundle 'suan/vim-instant-markdown'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'tfnico/vim-gradle'
 
 filetype plugin indent on
 
@@ -76,13 +77,9 @@ filetype indent on
 
 "=== color
 set t_Co=256
-colorscheme wombat
-highlight clear CursorLine
-highlight CursorLine gui=underline
-highlight CursorLine ctermbg=black guibg=black
-if g:colors_name ==? 'wombat'
-  hi Visual gui=none guifg=khaki guibg=olivedrab
-endif
+set background=dark
+let g:solarized_termtrans=1
+colorscheme solarized
 
 "=== control code display
 set list
@@ -106,7 +103,8 @@ let g:airline_inactive_collapse=1
 let g:airline#extensions#hunks#enabled = 1
 let g:airline#extensions#hunks#non_zero_only = 0
 let g:airline#extensions#hunks#hunk_symbols = ['+', '~', '-']
-let g:airline_theme="wombat"
+let g:airline_solarized_bg="dark"
+let g:airline_theme="solarized"
 let g:airline_powerline_fonts=0
 let g:airline_symbols = {'paste':1, 'readonly':2, 'whitespace':3, 'linenr':4, 'branch':5}
 let g:airline_left_sep = '⮀'
