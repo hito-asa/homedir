@@ -1,0 +1,13 @@
+#!/bin/bash
+
+SDIR=~/Pictures/screen
+FNAME=`ls -c $SDIR | head -1`
+BFNAME=${FNAME//\./b.}
+
+if [[ $FNAME =~ b\. ]]; then
+  echo "already bordered"
+  exit 1
+fi
+
+convert $SDIR/$FNAME -bordercolor darkgray -border 1 $SDIR/$BFNAME
+

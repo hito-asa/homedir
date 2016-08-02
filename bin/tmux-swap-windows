@@ -1,0 +1,70 @@
+#!/bin/sh
+# vi:sw=8:ts=8
+
+# Copyright (c) 2012 KOIE Hidetaka
+# 
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF MIND, USE, DATA OR PROFITS, WHETHER
+# IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING
+# OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+# How to use:
+# 1. copy this file in PATH.
+#    % cp tmux-swap-windows.sh ~/bin/tmux-swap-windows
+# 2. add key binding like this:
+#    bind S run "tmux-swap-windows"
+# 3. hit C-b S
+# 4. edit, and exit.
+#    - swap lines
+#    - change names
+#    - move '>' to active
+
+set -u
+set -e
+#set -x
+
+prog="$0"
+
+case "${1:-init}" in
+cont)
+        set -x
+        tmpfile="$2"
+        wlst=$(awk -F '\t' '/^#/{next}; $2~/^@/ {print $2}' $tmpfile)
+        nlst=$(awk -F '\t' '/^#/{next}; $2~/^@/ {print $4}' $tmpfile)
+        actv=$(awk -F '\t' '/^>/ {print $2}' $tmpfile)
+        idx=0
+        for wid in $wlst; do
+                tmux swap-window -d -s "$wid" -t "$idx"
+                idx=$((idx + 1))
+        done
+        idx=0
+        for name in $nlst; do
+                window_name=$(tmux display-message -p -t "$idx" '#{window_name}')
+                if [ "x$name" != "x$window_name" ]; then
+                        tmux rename-window -t "$idx" "$name"
+                fi
+                idx=$((idx + 1))
+        done
+        tmux select-window -t "$actv"
+        rm -f $tmpfile
+        exit
+        ;;
+esac
+
+tmpfile="${TMP-/tmp}/swapwindows.$$.tmp"
+editor="${EDITOR-vi}"
+
+{
+        printf "#WINDOW ID      PANES   NAME\n"
+        tmux list-windows -F '#{?window_active,>, }#{window_index}      #{window_id}    #{window_panes} #{window_name}'
+} >$tmpfile
+tmux new-window "tmux set-window-option remain-on-exit off && $editor $tmpfile && $prog cont $tmpfile"
+
+exit
