@@ -1,3 +1,2 @@
 export GIT_EDITOR=vim
 export FIGNORE=${FIGNORE}:.svn
-export GREP_OPTIONS="--color"
