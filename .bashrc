@@ -74,12 +74,13 @@ fi
 # gauche
 export RLWRAP_EDITOR='vim -c "set filetype=scheme"'
 
-# Grooby
-[[ -s "/home/usr0200241/.gvm/bin/gvm-init.sh" ]] && source "/home/usr0200241/.gvm/bin/gvm-init.sh"
-
-# Node
-export NVM_DIR="/home/usr0200241/.nvm"
+# nvm
+export NVM_DIR="${HOME}/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# gvm
+[[ -s "${HOME}/.gvm/scripts/gvm" ]] && source "${HOME}/.gvm/scripts/gvm"
 
 ssh() {
   cat $HOME/.ssh/configs/* > $HOME/.ssh/config
