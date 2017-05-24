@@ -2,5 +2,5 @@
 
 cd ~/kintai
 nvm use 6.10.3
-npm run in
+npm run overtime
 
