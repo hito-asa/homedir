@@ -10,4 +10,5 @@ if [[ $FNAME =~ b\. ]]; then
 fi
 
 convert $SDIR/$FNAME -bordercolor darkgray -border 1 $SDIR/$BFNAME
+cat $SDIR/$BFNAME | xclip -t image/png -selection clipboard
 
