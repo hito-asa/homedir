@@ -1,11 +1,18 @@
 #!/bin/bash
 
-SDIR=~/Pictures/screen
-FNAME=`ls -c $SDIR | head -1`
+if [[ -n $1 ]] && [[ -f $1 ]]; then
+  SDIR=$(dirname $1)
+  FNAME=$(basename $1)
+else
+  SDIR=~/Pictures/screen
+  FNAME=`ls -c $SDIR | head -1`
+fi
+
 BFNAME=${FNAME//\./b.}
 
-if [[ $FNAME =~ b\. ]]; then
+if [[ -f $BFNAME ]]; then
   echo "already bordered"
+  cat $SDIR/$FNAME | xclip -t image/png -selection clipboard
   exit 1
 fi
 

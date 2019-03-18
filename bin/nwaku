@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [[ -n $1 ]] && [[ -f $1 ]]; then
+  SDIR=$(dirname $1)
+  FNAME=$(basename $1)
+else
+  SDIR=~/Pictures/screen
+  FNAME=`ls -c $SDIR | head -1`
+fi
+
+cat $SDIR/$FNAME | xclip -t image/png -selection clipboard
+
