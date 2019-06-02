@@ -1,20 +1,35 @@
 #!/bin/bash
 
-#basic
-sudo apt-get install -y build-essential kernel-package python-software-properties
-sudo add-apt-repository ppa:git-core/ppa
-sudo add-apt-repository ppa:nilarimogard/webupd8
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-wget -q -O - https://www.hipchat.com/keys/hipchat-linux.key | sudo apt-key add -
-sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
-sudo sh -c 'echo "deb http://downloads.hipchat.com/linux/apt stable main" >> /etc/apt/sources.list.d/atlassian-hipchat.list'
-sudo apt-get update
-sudo apt-get install -y xubuntu-desktop git byobu vim aptitude fcitx-mozc curl google-chrome-stable compiz compizconfig-settings-manager vlc libdvdread4 gedit emerald compiz-plugins nautilus tree vpnc network-manager-vpnc synaptic gdebi-core xubuntu-restricted-extras libavcodec-extra keepassx hipchat arandr nkf
+# basic
+sudo apt update
+sudo apt remove thunderbird transmission-gkt
+sudo apt install -y build-essential kernel-package software-properties-common
+sudo apt install -y xubuntu-desktop git byobu neovim fcitx-mozc curl compiz compizconfig-settings-manager vlc gedit emerald compiz-plugins tree vpnc network-manager-vpnc synaptic xubuntu-restricted-addons libavcodec-extra keepassx arandr nkf fonts-powerline tilix 
 
-#dvd
-sudo /usr/share/doc/libdvdread4/install-css.sh
+# chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
 
-#skype
-wget http://download.skype.com/linux/skype-ubuntu-precise_4.3.0.37-1_i386.deb
-sudo gdebi skype-ubuntu-precise_4.3.0.37-1_i386.deb
+
+mv ~/.bashrc ~/.bashrc.bak
+mv ~/.byobu ~/.byobu.bak
+
+ln -s $PWD/.bashrc ~/.bashrc
+ln -s $PWD/.bash_aliases ~/.bash_aliases
+ln -s $PWD/.bash_env ~/.bash_env
+ln -s $PWD/.byobu ~/.byobu
+ln -s $PWD/.config/nvim ~/.config/nvim
+ln -s $PWD/.config/compiz-1 ~/.config/compiz-1
+ln -s $PWD/.inputrc ~/.inputrc
+ln -s $PWD/.externals ~/.externals
+ln -s $PWD/.tmux-powerlinerc ~/.tmux-powerlinerc
+ln -s $PWD/.gitconfig ~/.gitconfig
+ln -s $PWD/.gemrc ~/.gemrc
+ln -s $PWD/.xkb ~/.xkb
+ln -s $PWD/bin ~/bin
+ln -s $PWD/.emerald/ ~/.emerald
+ln -s $PWD/.vim ~/.vim
+ln -s $PWD/.byobu ~/.byobu
+
+sudo ln -s /etc/profile.d/vte-2.91.sh /etc/profile.d/vte.sh
 
