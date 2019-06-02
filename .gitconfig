@@ -1,6 +1,7 @@
 [user]
         name = ASAI Hitoshi
         email = hitoasa@gmail.com
+	signingkey = A281DDC5D4E9000E
 [alias]
         lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
         lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
@@ -22,3 +23,7 @@
 	ui = auto
 [fetch]
 	prune = true
+[gpg]
+	program = gpg
+[commit]
+	gpgsign = true
